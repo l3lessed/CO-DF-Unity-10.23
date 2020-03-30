@@ -138,7 +138,7 @@ namespace DaggerfallWorkshop.Game
                 Aspeedmodifider = .4f;
 
             if (Sspeedmodifider == 0)
-                Sspeedmodifider = .75f;
+                Sspeedmodifider = .85f;
 
             if (GameManager.Instance.WeaponManager.Sheathed == false && GameManager.Instance.WeaponManager.IsAttacking == false)
                 baseSpeed = baseSpeed * Sspeedmodifider;

@@ -779,7 +779,7 @@ namespace DaggerfallWorkshop.Game
         private void AlignCenter(WeaponAnimation anim, int width, int height)
         {
             weaponPosition = new Rect(
-                ((Screen.width / 2f) - (width * weaponScaleX) / 2f) * anim.Offset,
+                (((Screen.width * (1f - anim.Offset)) / 2f) - (width * weaponScaleX) / 2f),
                 Screen.height * (1f - anim.Offsety) - height * weaponScaleY,
                 width * weaponScaleX,
                 height * weaponScaleY);
