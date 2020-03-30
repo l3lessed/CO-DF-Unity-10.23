@@ -4,7 +4,7 @@
 
 This is a edit of the base script and code surrounding the combat, weapon, and attack animation system. The purpose of this mod is to bring the combat and animation system into a more modern feel without losing the charm and asthetics of the original. It took a year of breaking the code apart and reworking it in order to create this custom animatiom and raycast system, along with the numerous other features. I hope you enjoy it, and respect coders work. If you wish to use any of my code, get permissions first.
 
-*This is currently a developer release meant largely for testing, tuning, and debugging. This is not considered a an official release of anytime*
+*This is currently a developer release meant largely for testing, tuning, and debugging. This is not considered an official release of any type, and I provide no support if your save/game breaks during play through.*
 
 ## Features & Roadmap
 
