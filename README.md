@@ -36,7 +36,7 @@ Not Complete
 * ChangeAttackSpeed: This subtracts or adds a certain float value from the default animation attack speed; Use .01 increments.
 * ChangeHorPos: Changes start and end position of hit arc detection; starts at 45 degree and does 90 degree arc to end at 45 degrees on opposite side. (-start float -end float).
 * ChangeRaycastLerp; Changes how slow or fast the hit arc is drawn. Default is .188f. Recommend .01f increments.
-* ChangeMovementMods; Multiplies base movement speed for sheathed and attack animations. Default is -sheathed .85f -attack .4f. (-sheathed float -attack float).
+* ChangeMovementMods; Multiplies base movement speed for sheathed and attack animations. Default is -sheathed .85f -attack .4f. Set values to 1 to disable any movement reduction. (-sheathed float -attack float).
 
 ## Threads Related to Code
 
