@@ -9,8 +9,8 @@ This is a edit of the base script and code surrounding the combat, weapon, and a
 ## Features & Roadmap
 
 Completed
-+ Completely rebuilt the weaponmanager and fpsweapon script to create 60fps smooth attack animations.
-+ Rebuilt weaponmanager script to create 90 degree raycast detection arcs on weapon swings. On object hit, stops, and plays a recoil.
++ Completely rebuilt the weaponmanager and fpsweapon script to create 60fps smooth attack animations. Scales with your attack speed.
++ Rebuilt weaponmanager script to create 90 degree raycast detection arcs on weapon swings. On object hit, stops, and plays a recoil. Scales with your attack speed.
 + Weapons now have a bob effect when moving to simulate real life movement.
 + Every weapon has its own unique range. No longer will weapons all have the same reach.
 + Attacks have been tied to movement keys, so you now can choose your attack based on the four movement keys.
