@@ -2,7 +2,7 @@
 
 > Daggerfall Unity is an open source recreation of Daggerfall in the Unity engine created by [Daggerfall Workshop](http://www.dfworkshop.net).
 
-This is a edit of the base script and code surrounding the combat, weapon, and attack animation system. The purpose of this mod is to bring the combat and animation system into a more modern feel without losing the charm and asthetics of the original. A year of break the code apart and reworking it has gone into creating this custom animatiom and raycast system, along with the numerous other features. I hope you enjoy it.
+This is a edit of the base script and code surrounding the combat, weapon, and attack animation system. The purpose of this mod is to bring the combat and animation system into a more modern feel without losing the charm and asthetics of the original. It took a year of breaking the code apart and reworking it in order to create this custom animatiom and raycast system, along with the numerous other features. I hope you enjoy it, and respect coders work. If you wish to use any of my code, get permissions first.
 
 *This is currently a developer release meant largely for testing, tuning, and debugging. This is not considered a an official release of anytime*
 
