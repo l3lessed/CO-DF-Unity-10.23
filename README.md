@@ -10,11 +10,11 @@ This is a edit of the base script and code surrounding the combat, weapon, and a
 
 Completed
 + Completely rebuilt the weaponmanager and fpsweapon script to create 60fps smooth attack animations.
++ Rebuilt weaponmanager script to create 90 degree raycast detection arcs on weapon swings. On object hit, stops, and plays a recoil.
 + Weapons now have a bob effect when moving to simulate real life movement.
 + Every weapon has its own unique range. No longer will weapons all have the same reach.
 + Attacks have been tied to movement keys, so you now can choose your attack based on the four movement keys.
 + Weapons each have their own speed that is uniquely calculated based on their weight and range.
-+ Weapons now cast hit detection arcs as they swing and will detect hitting and object and recoil.
 + Players speed is now reduced with they unsheath a weapon and reduced further when they attack.
 + Inventory UI reads out unique weapon ranges for players.
 + A number of bug fixes and extra console commands added to improve the code and allow player manipulation.
