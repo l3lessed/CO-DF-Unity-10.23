@@ -16,10 +16,10 @@ Completed
 + Attacks have been tied to movement keys, so you now can choose your attack based on the four movement keys.
 + Weapons each have their own speed that is uniquely calculated based on their weight and range.
 + Players speed is now reduced with they unsheath a weapon and reduced further when they attack.
-+ Inventory UI reads out unique weapon ranges for players.
 + A number of bug fixes and extra console commands added to improve the code and allow player manipulation.
 
 Not Complete
+- Inventory UI reads out unique weapon ranges for players (Lost in transiton to 10.21).
 - Add a toggle block system for shields.
 - Add a weapon parry system for two handed wielding.
 - Add unique sword sprite sizes to mimick different blade sizes.
