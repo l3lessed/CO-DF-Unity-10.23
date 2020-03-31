@@ -2,7 +2,13 @@
 
 > Daggerfall Unity is an open source recreation of Daggerfall in the Unity engine created by [Daggerfall Workshop](http://www.dfworkshop.net).
 
-This is a edit of the base script and code surrounding the combat, weapon, and attack animation system. The purpose of this mod is to bring the combat and animation system into a more modern feel without losing the charm and asthetics of the original. It took a year of breaking the code apart and reworking it in order to create this custom animatiom and raycast system, along with the numerous other features. I hope you enjoy it, and respect coders work. If you wish to use any of my code, get permissions first.
+This is a edit of the base script and code surrounding the combat, weapon, and attack animation system. The purpose of this mod is to bring the combat and animation system into a more modern feel without losing the charm and asthetics of the original. It took a year of breaking the code apart and reworking it in order to create this custom animation and raycast system, along with the numerous other features. 
+
+How was this magic created? It started out as a simple experiment to get raycast arcs in to simulate a weapon attack arc. This led me to look into how the attack system is managed, which connected to the animation system. Upon learning there wasn't going to be any hi-frame animation replacements, I decided to make this into a full blown project and see if I could create a new animation system using the current engine and code. Here it is a year later, and I was able to prove my concept could be done and produce the look and feel of high frame animations, while working within the original system with all original content.
+
+This is a 100% code based solution to maintain the original game and its feel; this also ensures it should be 100% compatible with mods built for the base branch. If someone ever creates a mod that messes with the animation or racycast code, this will probably have issues.
+
+I hope you enjoy it, and respect coders work. If you wish to use any of my code, get permissions first.
 
 *This is currently a developer release meant largely for testing, tuning, and debugging. This is not considered an official release of any type, and I provide no support if your save/game breaks during play through.*
 
