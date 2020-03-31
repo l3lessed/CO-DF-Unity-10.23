@@ -423,8 +423,26 @@ namespace DaggerfallWorkshop.Game
                             {
                                 curAnimRect = isImported ? new Rect(0, 0, -1, 1) : weaponRects[weaponIndices[2].startIndex + currentFrame];
                                 weaponAnimRecordIndex = 2;
-                                anim.Offset = posi + 2f;
-                                anim.Offsety = (posi / 3) * -1;
+                                if (GetCurrentFrame() <= 2)
+                                {
+                                    anim.Offset = -.5f;
+                                    anim.Offsety = posi - .165f;
+                                }
+                                else if (GetCurrentFrame() == 3)
+                                {
+                                    anim.Offset = -.5f;
+                                    anim.Offsety = posi * -1;
+                                }
+                                else if (GetCurrentFrame() == 4)
+                                {
+                                    anim.Offset = -.5f;
+                                    anim.Offsety = posi - .165f;
+                                }
+                                else if (GetCurrentFrame() == 5)
+                                {
+                                    anim.Offset = -.5f;
+                                    anim.Offsety = posi * -1;
+                                }
                             }
                             else
                             {
@@ -474,25 +492,24 @@ namespace DaggerfallWorkshop.Game
                             {
                                 if (currentFrame <= 1)
                                 {
-                                    anim.Offset = (posi + 1f);
+                                    lerpRange = .03f;
+                                    anim.Offset = posi - .15f;
                                     anim.Offsety = (posi / 2) - .15f;
                                 }
                                 else if (currentFrame == 2)
                                 {
-                                    anim.Offset = (posi + 1.8f);
-                                    posi = posi + .004f;
-                                    anim.Offsety = (posi / 2) - .25f;
+                                    anim.Offset = posi - .45f;
+                                    anim.Offsety = posi - .24f;
                                 }
                                 else if (currentFrame == 3)
                                 {
-                                    anim.Offset = (posi + 2.3f);
-                                    posi = posi + .004f;
+                                    anim.Offset = (posi-.45f);
                                     anim.Offsety = ((posi / 2) * -1);
                                 }
                                 else if (currentFrame == 4)
                                 {
-                                    anim.Offset = (posi + 2.3f);
-                                    posi = posi + .004f;
+                                    anim.Offset = (posi - .45f);
+                                    //posi = posi + .004f;
                                     anim.Offsety = ((posi / 2) * -1);
                                 }
                             }
@@ -602,8 +619,9 @@ namespace DaggerfallWorkshop.Game
                                 curAnimRect = isImported ? new Rect(0, 0, -1, 1) : weaponRects[weaponIndices[3].startIndex + currentFrame];
                                 weaponAnimRecordIndex = 3;
                                 if(currentFrame <3)
-                                anim.Offset = 1.2f;
-                                anim.Offsety = posi - .25f;
+                                    anim.Offsety = posi - .14f;
+                                else
+                                    anim.Offsety = posi * -1;
 
 
                             }
@@ -655,32 +673,32 @@ namespace DaggerfallWorkshop.Game
                                 {
                                     curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[5].startIndex + currentFrame];
                                     weaponAnimRecordIndex = 5;
-                                    anim.Offset = posi + 1f;
-                                    anim.Offsety = posi - .33f;
+                                    anim.Offset = posi;
+                                    anim.Offsety = posi - .14f;
                                 }
                                 else if (currentFrame == 2)
                                 {
                                     curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[5].startIndex + currentFrame];
                                     weaponAnimRecordIndex = 5;
-                                    anim.Offset = posi + 1f;
-                                    anim.Offsety = posi - .25f;
+                                    anim.Offset = posi;
+                                    anim.Offsety = posi - .14f;
                                 }
                                 else if (currentFrame == 3)
                                 {
                                     curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[5].startIndex + currentFrame];
                                     weaponAnimRecordIndex = 5;
-                                    anim.Offset = posi + 1f;
+                                    anim.Offset = posi;
                                     anim.Offsety = (posi * -1);
                                 }
                                 else if (currentFrame == 4)
                                 {
                                     curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[5].startIndex + currentFrame];
                                     weaponAnimRecordIndex = 5;
-                                    anim.Offset = posi + 1f;
-                                    anim.Offsety = (posi * -1) ;
+                                    anim.Offset = posi;
+                                    anim.Offsety = (posi * -1);
                                 }
                             }
-                            else if(WeaponType == WeaponTypes.Werecreature)
+                            else if (WeaponType == WeaponTypes.Werecreature)
                             {
                                 curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[1].startIndex + currentFrame];
                                 weaponAnimRecordIndex = 1;
@@ -688,6 +706,33 @@ namespace DaggerfallWorkshop.Game
                                     anim.Offsety = posi - .1f;
                                 else
                                     anim.Offsety = (posi * -1);
+                            }
+                            else if (WeaponType == WeaponTypes.Staff || WeaponType == WeaponTypes.Staff_Magic)
+                            {
+                                if (currentFrame <= 1)
+                                {
+                                    curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[0].startIndex];
+                                    weaponAnimRecordIndex = 0;
+                                    anim.Offset = .25f;
+                                    anim.Offsety = (posi * -1) * 2.2f;
+                                }
+                                else if (currentFrame == 2)
+                                {
+                                    curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[6].startIndex + currentFrame];
+                                    weaponAnimRecordIndex = 6;
+                                    anim.Offset = .25f;
+                                    anim.Offsety = posi - .65f;
+                                }
+                                else if (currentFrame == 3)
+                                {
+                                    anim.Offset = .25f;
+                                    anim.Offsety = posi - .45f;
+                                }
+                                else if (currentFrame == 4)
+                                {
+                                    anim.Offset = .25f;
+                                    anim.Offsety = posi - .25f;
+                                }
                             }
                             else
                             {

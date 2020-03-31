@@ -510,7 +510,7 @@ namespace DaggerfallWorkshop.Game
                             //computes rotation for each raycast using a lerp. The time percentage is modified above using the animation time.
                             Quaternion slerpq = Quaternion.Slerp(startq, endq, perc);
                             //computes rotation for each raycast. First angle sets permanent left/right offset. Second runs ray down cast for each tick.
-                            attackcast = Quaternion.AngleAxis(15, transform.up) * (slerpq * (mainCamera.transform.forward * (itemRange - SphereCastRadius)));
+                            attackcast = Quaternion.AngleAxis(5, transform.up) * (slerpq * (mainCamera.transform.forward * (itemRange - SphereCastRadius)));
                             FireRayArc();
 
                         }
