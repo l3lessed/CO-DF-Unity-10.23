@@ -485,13 +485,13 @@ namespace DaggerfallWorkshop.Game
                 if (ScreenWeapon.WeaponType != WeaponTypes.Flail)
                     startframe = 0;
                 else
-                    startframe = 1;
+                    startframe = 25;
 
                 //starts raycasts loop to send out raycasts based on attack direction. Aligns with the attack direction
                 //then starts to offset the raycast one increment at a time to follow animation. When hits object, marks
                 // hitobject as true and ends raycasts. Also, tells fpsweapon script to start collision animation.
                 //calculates only once every frame.
-                if ((CurrentFrame > startframe && CurrentFrame < 4) && ScreenWeapon.WeaponType != WeaponTypes.Bow && !hitobject)
+                if ((CurrentFrame > 0 && CurrentFrame < 4) && ScreenWeapon.WeaponType != WeaponTypes.Bow && !hitobject)
                 {
                     //if then loop to select the specific raycast offset transformation based on the choosen attack animation.
                     if (ScreenWeapon.WeaponState == WeaponStates.StrikeUp)
@@ -552,7 +552,7 @@ namespace DaggerfallWorkshop.Game
                                 startpos = -35;
 
                             if ((endpos = FPSConsoleCommands.ChangeHorPos.EchangeHorPos) == 0)
-                                endpos = 45;
+                                endpos = 30;
 
                             //sets up starting and ending quaternion angles for the vector3 offset/raycast.
                             Quaternion startq = Quaternion.AngleAxis(startpos, transform.right);
@@ -560,7 +560,7 @@ namespace DaggerfallWorkshop.Game
                             //computes rotation for each raycast using a lerp. The time percentage is modified above using the animation time.
                             Quaternion slerpq = Quaternion.Slerp(startq, endq, perc);
                             //computes rotation for each raycast. First angle sets permanent left/right offset. Second runs ray down cast for each tick.
-                            attackcast = Quaternion.AngleAxis(25, transform.up) * (slerpq * (mainCamera.transform.forward * (itemRange - SphereCastRadius)));
+                            attackcast = Quaternion.AngleAxis(startframe, transform.up) * (slerpq * (mainCamera.transform.forward * (itemRange - SphereCastRadius)));
                             FireRayArc();
                         }
                     }

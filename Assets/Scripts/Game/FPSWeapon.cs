@@ -533,31 +533,31 @@ namespace DaggerfallWorkshop.Game
                             {
                                 if (currentFrame <= 1)
                                 {
-                                    curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[2].startIndex + 1];
-                                    weaponAnimRecordIndex = 2;
-                                    anim.Offset = (posi / 4) - .27f;
-                                    anim.Offsety = .21f - posi;
+                                    curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[1].startIndex + 2];
+                                    weaponAnimRecordIndex = 1;
+                                    anim.Offset = (posi) - .25f;
+                                    anim.Offsety = (posi/2) * -1;
                                 }
                                 else if (currentFrame == 2)
                                 {
                                     curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[6].startIndex + 3];
                                     weaponAnimRecordIndex = 6;
-                                    anim.Offset = (posi / 4) - .10f;
-                                    anim.Offsety = .05f - (posi);
+                                    anim.Offset = (posi / 3) - .05f;
+                                    anim.Offsety = posi * -1;
                                 }
                                 else if (currentFrame == 3)
                                 {
                                     curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[6].startIndex + 2];
                                     weaponAnimRecordIndex = 6;
-                                    anim.Offset = posi / 4;
-                                    anim.Offsety = ((posi) * -1) - .05f;
+                                    anim.Offset = (posi / 3) -.05f;
+                                    anim.Offsety = (posi * -1) -.05f;
                                 }
                                 else
                                 {
                                     curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[6].startIndex + 1];
                                     weaponAnimRecordIndex = 6;
-                                    anim.Offset = posi / 4;
-                                    anim.Offsety = ((posi) * -1) - .1f;
+                                    anim.Offset = (posi / 3) - .05f;
+                                    anim.Offsety = (posi * -1) - .1f;
                                 }
                             }
                             else if (WeaponType == WeaponTypes.Dagger || WeaponType == WeaponTypes.Dagger_Magic)
@@ -629,29 +629,29 @@ namespace DaggerfallWorkshop.Game
                             {
                                 if (currentFrame <= 1)
                                 {
-                                    curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[6].startIndex + 3];
+                                    curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[6].startIndex + 4];
                                     weaponAnimRecordIndex = 1;
-                                    anim.Offset = (posi / 4) - .125f;
-                                    anim.Offsety = (posi * -1) + .05f;
+                                    anim.Offset = (posi / 4);
+                                    anim.Offsety = posi * -1;
                                 }
                                 else if (currentFrame == 2)
                                 {
                                     posi = posi + .003f;
-                                    curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[6].startIndex + 4];
+                                    curAnimRect = isImported ? new Rect(0, 0, 1, 1) : weaponRects[weaponIndices[6].startIndex + 3];
                                     weaponAnimRecordIndex = 1;
-                                    anim.Offset = (posi / 4) - .075f;
-                                    anim.Offsety = (posi * -1) - .2f;
+                                    anim.Offset = (posi / 4) + .075f;
+                                    anim.Offsety = (posi * -1) - .15f;
                                 }
                                 else if (currentFrame == 3)
                                 {
                                     posi = posi + .003f;
-                                    anim.Offset = (posi / 4) + .1f;
+                                    anim.Offset = (posi / 4) + .2f;
                                     anim.Offsety = (posi * -1) - .05f;
                                 }
                                 else
                                 {
                                     posi = posi + .003f;
-                                    anim.Offset = (posi / 4) + .1f;
+                                    anim.Offset = (posi / 4) + .2f;
                                     anim.Offsety = (posi * -1) - .15f;
                                 }
                             }
@@ -995,7 +995,7 @@ namespace DaggerfallWorkshop.Game
                         }
                     }
                     //reverse attack animation if not on 0/idle frame.
-                    else if (currentFrame >= 2)
+                    else if (currentFrame >= 1)
                     {
                         // Step frame
                         currentFrame--;
@@ -1067,14 +1067,14 @@ namespace DaggerfallWorkshop.Game
         private float GetAnimTickTime()
         {
             //added to enable on the fly attack speed changes.
-            AttackSpeed = AttackSpeed + FPSConsoleCommands.ChangeAttackSpeed.changeAttackSpeed;
+            AttackSpeed = (AttackSpeed + FPSConsoleCommands.ChangeAttackSpeed.changeAttackSpeed) / 200;
 
             PlayerEntity player = GameManager.Instance.PlayerEntity;
             if (WeaponType == WeaponTypes.Bow || player == null)
                 return GameManager.classicUpdateInterval;
             else
                 //added attack speed modifier. It divides by a large number because base animation speeds are divided by 980 at the end to get MS calculations.             
-                return FormulaHelper.GetMeleeWeaponAnimTime(player, WeaponType, WeaponHands) + (AttackSpeed/490);
+                return (FormulaHelper.GetMeleeWeaponAnimTime(player, WeaponType, WeaponHands) + AttackSpeed);
         }
 
         private void LoadWeaponAtlas()
