@@ -2,7 +2,13 @@
 
 > Daggerfall Unity is an open source recreation of Daggerfall in the Unity engine created by [Daggerfall Workshop](http://www.dfworkshop.net).
 
-This is a edit of the base script and code surrounding the combat, weapon, and attack animation system. The purpose of this mod is to bring the combat and animation system into a more modern feel without losing the charm and asthetics of the original. It took a year of breaking the code apart and reworking it in order to create this custom animatiom and raycast system, along with the numerous other features. I hope you enjoy it, and respect coders work. If you wish to use any of my code, get permissions first.
+This is a edit of the base script and code surrounding the combat, weapon, and attack animation system. The purpose of this mod is to bring the combat and animation system into a more modern feel without losing the charm and asthetics of the original. It took a year of breaking the code apart and reworking it in order to create this custom animation and raycast system, along with the numerous other features. 
+
+How was this magic created? It started out as a simple experiment to get raycast arcs in to simulate a weapon attack arc. This led me to look into how the attack system is managed, which connected to the animation system. Upon learning there wasn't going to be any hi-frame animation replacements, I decided to make this into a full blown project and see if I could create a new animation and hit/raycast detect system using the current engine and code. Here it is a year later, and I was able to prove my concept could be done and produce the look and feel of high frame animations, while working within the original system with all original content.
+
+This is a 100% code based solution to maintain the original game and its feel; this also ensures it should be 100% compatible with mods built for the base branch. If someone ever creates a mod that messes with the animation or racycast code, this will probably have issues.
+
+I hope you enjoy it, and respect coders work. If you wish to use any of my code, get permissions first.
 
 *This is currently a developer release meant largely for testing, tuning, and debugging. This is not considered an official release of any type, and I provide no support if your save/game breaks during play through.*
 
@@ -16,10 +22,10 @@ Completed
 + Attacks have been tied to movement keys, so you now can choose your attack based on the four movement keys.
 + Weapons each have their own speed that is uniquely calculated based on their weight and range.
 + Players speed is now reduced with they unsheath a weapon and reduced further when they attack.
-+ Inventory UI reads out unique weapon ranges for players.
 + A number of bug fixes and extra console commands added to improve the code and allow player manipulation.
 
 Not Complete
+- Inventory UI reads out unique weapon ranges for players (Lost in transiton to 10.21).
 - Add a toggle block system for shields.
 - Add a weapon parry system for two handed wielding.
 - Add unique sword sprite sizes to mimick different blade sizes.
@@ -52,7 +58,7 @@ Not Complete
 + [Twitter](https://twitter.com/gav_clayton) - *Follow lead developer on Twitter for more news*
 
 ## Versions
-+ *Daggerfall Unity* - v0.10.21
++ *Daggerfall Unity* - v0.10.23
 + *Daggerfall Tools for Unity* - v1.8.7
 + *Minimum Unity3D version* - 2018.2.21f1
 
