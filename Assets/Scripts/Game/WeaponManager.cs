@@ -471,7 +471,7 @@ namespace DaggerfallWorkshop.Game
 
                 //checks of console value has been set and defaults it if not.
                 if ((lerptimer = FPSConsoleCommands.ChangeRaycastLerp.changeRaycastLerp) == 0)
-                    lerptimer = .185f;
+                    lerptimer = .2f;
 
                 //calculates the float timer for the below lerp. it divides the animation time by a 5th of a frame to get
                 //how much time has passed in the current frame (which there are 5 of) and move  below lerp.
@@ -491,7 +491,7 @@ namespace DaggerfallWorkshop.Game
                 //then starts to offset the raycast one increment at a time to follow animation. When hits object, marks
                 // hitobject as true and ends raycasts. Also, tells fpsweapon script to start collision animation.
                 //calculates only once every frame.
-                if ((CurrentFrame > 0 && CurrentFrame < 4) && ScreenWeapon.WeaponType != WeaponTypes.Bow && !hitobject)
+                if ((CurrentFrame > 0 && CurrentFrame <= 5) && ScreenWeapon.WeaponType != WeaponTypes.Bow && !hitobject)
                 {
                     //if then loop to select the specific raycast offset transformation based on the choosen attack animation.
                     if (ScreenWeapon.WeaponState == WeaponStates.StrikeUp)
